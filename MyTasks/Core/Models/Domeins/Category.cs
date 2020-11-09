@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyTasks.Core.Models.Domeins
 {
@@ -13,11 +11,11 @@ namespace MyTasks.Core.Models.Domeins
         {
             Tasks = new Collection<Task>();
         }
+
         public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
-
 
         public ICollection<Task> Tasks { get; set; }
     }
