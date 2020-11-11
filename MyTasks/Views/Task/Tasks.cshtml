@@ -35,12 +35,12 @@
 </form>
 
 <div>
-    @await Html.PartialAsync("_TaskTable.cshtml", Model.Task)
+    @await Html.PartialAsync("_TasksTable.cshtml", Model.Task)
 </div>
 
 @section Scripts
 {
-    <scripts type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function()
         {
 
@@ -121,10 +121,7 @@
         });
         }
 
-
-
-
-    </scripts>
+    </script>
 
 }
 

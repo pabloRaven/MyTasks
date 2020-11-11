@@ -22,10 +22,7 @@ namespace MyTasks.Controllers
 
         public IActionResult Tasks()
         {
-
             var userId = User.GetUserId();
-
-
 
             var vm = new TasksViewModel
             {
@@ -35,7 +32,7 @@ namespace MyTasks.Controllers
 
             };
 
-            return View();
+            return View(vm);
         }
 
         [HttpPost]
@@ -49,7 +46,7 @@ namespace MyTasks.Controllers
                 viewModel.FilterTasks.Title);
 
 
-            return PartialView("_TaskTable", tasks);
+            return PartialView("_TasksTable", tasks);
         }
 
         public IActionResult Task(int id = 0)
@@ -64,10 +61,10 @@ namespace MyTasks.Controllers
             {
                 Task = task,
                 Heading = id == 0 ?
-                "Dodawanie nowegozadania" : "Edytowanie zadania",
+                "Dodawanie nowego zadania" : "Edytowanie zadania",
                 Categories = _taskRepository.GetCategories()
             };
-            return View();
+            return View(vm);
 
         }
 
